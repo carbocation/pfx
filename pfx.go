@@ -34,9 +34,9 @@ func e(err error) error {
 	if !FullyQualifiedPath {
 		fn := strings.Split(name, "/")
 		if len(fn) > 0 {
-			return fmt.Errorf("%s: %s", fn[len(fn)-1], err.Error())
+			return fmt.Errorf("%s: %w", fn[len(fn)-1], err)
 		}
 	}
 
-	return fmt.Errorf("%s: %s", name, err.Error())
+	return fmt.Errorf("%s: %w", name, err)
 }
